@@ -1,0 +1,273 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <LinearLayout
+        android:id="@+id/caloryRemaining"
+        android:layout_width="fill_parent"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="5dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:textSize="20sp"
+        android:gravity="center"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <TextView
+            android:id="@+id/caloryRemainingText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:text="Calories Remaining"
+            android:gravity="center"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/caloryRemainingNumber"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight=".3"
+            android:text="0"
+            android:textSize="23sp" />
+
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/total"
+        android:layout_width="fill_parent"
+        android:layout_height="28dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="3dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/showFood"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/caloryRemaining">
+
+        <TextView
+            android:id="@+id/caloryText"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_weight=".7"
+            android:text="Total Calories"
+            android:gravity="center"
+            android:textSize="23sp" />
+
+        <TextView
+            android:id="@+id/caloryTotal"
+            android:layout_width="0dp"
+            android:layout_height="wrap_content"
+            android:layout_gravity="left"
+            android:layout_weight=".3"
+            android:text="0"
+            android:textSize="23sp" />
+
+    </LinearLayout>
+
+
+    <TextView
+        android:id="@+id/showFood"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".7"
+        android:text="Food Lists"
+        android:gravity="center"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/foods"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/total"/>
+
+    <ListView
+        android:id="@+id/foods"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:textColor="#FFA500"
+        app:layout_constraintBottom_toTopOf="@+id/showExercise"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showFood" />
+
+    <TextView
+        android:id="@+id/showExercise"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:layout_weight=".7"
+        android:text="Exercise Lists"
+        android:gravity="center"
+        android:textSize="23sp"
+        app:layout_constraintBottom_toTopOf="@+id/exercises"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/foods"/>
+
+    <ListView
+        android:id="@+id/exercises"
+        android:layout_width="match_parent"
+        android:layout_height="120dp"
+        android:layout_marginStart="4dp"
+        android:layout_marginLeft="4dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="4dp"
+        android:layout_marginRight="4dp"
+        android:textColor="#008000"
+        android:textSize="15sp"
+        app:layout_constraintBottom_toTopOf="@+id/total"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/showExercise" />
+
+
+
+    <LinearLayout
+        android:id="@+id/addLayout"
+        android:layout_width="fill_parent"
+        android:layout_height="150dp"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginTop="3dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="3dp"
+        android:orientation="horizontal"
+        android:layout_gravity="center"
+        app:layout_constraintBottom_toTopOf="@+id/resetButton"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/exercises">
+
+        <LinearLayout
+            android:id="@+id/addFood"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintRight_toLeftOf="@+id/addExercise"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Enter Food"
+                android:ems="10"
+                android:id="@+id/newFood"
+                app:layout_constraintBottom_toTopOf="@+id/newCalory"
+                app:layout_constraintTop_toTopOf="parent" android:gravity="center"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Enter Food Calory"
+                android:ems="10"
+                android:id="@+id/newCalory"
+                app:layout_constraintBottom_toTopOf="@+id/addButton"
+                app:layout_constraintTop_toBottomOf="@+id/newFood" android:gravity="center"/>
+
+            <Button
+                android:id="@+id/addButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="3dp"
+                android:onClick="addFood"
+                android:text="Add Food"
+                app:layout_constraintTop_toBottomOf="@+id/newCalory"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent" />
+
+        </LinearLayout>
+
+
+        <LinearLayout
+            android:id="@+id/addExercise"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:orientation="vertical"
+            android:gravity="center"
+            app:layout_constraintLeft_toRightOf="@+id/addFood"
+            app:layout_constraintTop_toTopOf="parent"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent">
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="text"
+                android:hint="Enter Exercise"
+                android:ems="10"
+                android:id="@+id/newExercise"
+                app:layout_constraintBottom_toTopOf="@+id/newExerciseCalory"
+                app:layout_constraintTop_toBottomOf="parent" android:gravity="center"/>
+
+            <EditText
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:inputType="numberDecimal"
+                android:hint="Enter Exercise Calory"
+                android:ems="10"
+                android:id="@+id/newExerciseCalory"
+                app:layout_constraintBottom_toTopOf="@+id/addExerciseButton"
+                app:layout_constraintTop_toBottomOf="@+id/newExercise" android:gravity="center"/>
+
+            <Button
+                android:id="@+id/addExerciseButton"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:layout_marginStart="8dp"
+                android:layout_marginLeft="8dp"
+                android:layout_marginEnd="8dp"
+                android:layout_marginRight="8dp"
+                android:layout_marginBottom="3dp"
+                android:onClick="addExercise"
+                android:text="Add Exercise"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintTop_toBottomOf="@+id/newExerciseCalory" android:gravity="center"/>
+
+        </LinearLayout>
+
+    </LinearLayout>
+
+    <Button
+        android:id="@+id/resetButton"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="8dp"
+        android:layout_marginLeft="8dp"
+        android:layout_marginEnd="8dp"
+        android:layout_marginRight="8dp"
+        android:layout_marginBottom="30dp"
+        android:onClick="resetAll"
+        android:text="Reset All"
+        app:layout_constraintTop_toBottomOf="@+id/addLayout"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent" />
+
+</androidx.constraintlayout.widget.ConstraintLayout>
